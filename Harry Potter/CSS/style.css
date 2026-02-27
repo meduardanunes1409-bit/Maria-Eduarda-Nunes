@@ -1,0 +1,338 @@
+/* Reset e Váriaveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vermelho: #d11212;
+    --vermelho-escuro: #8a0000;
+    --preto: #111;
+    --branco: #fff;
+    --cinza: #f4f4f4;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--preto);
+    color: var(--branco);
+    overflow: hidden; /* Controlado pelo JS */
+    height: 100vh;
+}
+
+/* --- GERENCIAMENTO DE TELAS --- */
+.tela {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.tela-ativa {
+    display: flex;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- TELA 1: ABERTURA --- */
+.fundo-chute {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.img-fundo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.conteudo-inicio {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.bola-magica {
+    font-size: 4rem;
+    color: var(--branco);
+    margin-bottom: 20px;
+    animation: chutar 2s infinite alternate;
+}
+
+@keyframes chutar {
+    0% { transform: translateX(-100px) rotate(-20deg); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(0) rotate(0deg); }
+}
+
+.titulo-animado {
+    font-family: 'Anton', sans-serif;
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: var(--branco);
+    text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+    opacity: 0;
+    animation: aparecerTexto 2s forwards 1s; /* Espera a bola */
+}
+
+.subtitulo-animado {
+    font-size: 2rem;
+    color: var(--vermelho);
+    font-weight: bold;
+    margin-top: 10px;
+    opacity: 0;
+    animation: aparecerTexto 2s forwards 2s;
+}
+
+.botao-entrar {
+    margin-top: 40px;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background: var(--vermelho);
+    color: var(--branco);
+    border: 2px solid var(--branco);
+    border-radius: 50px;
+    cursor: pointer;
+    opacity: 0;
+    animation: aparecerTexto 1s forwards 3s;
+    transition: 0.3s;
+}
+
+.botao-entrar:hover {
+    background: var(--branco);
+    color: var(--vermelho);
+    transform: scale(1.1);
+}
+
+@keyframes aparecerTexto {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- TELA 2: HISTÓRIA --- */
+.fundo-historia {
+    width: 100%;
+    height: 100%;
+    background: var(--cinza);
+    color: var(--preto);
+    overflow-y: auto; /* Permite rolar a página */
+    padding-bottom: 50px;
+}
+
+.menu-navegacao {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--vermelho);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.menu-navegacao button {
+    background: transparent;
+    border: 1px solid var(--branco);
+    color: var(--branco);
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.menu-navegacao span {
+    font-family: 'Anton';
+    font-size: 1.5rem;
+}
+
+.secao {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.titulo-secao {
+    font-family: 'Anton';
+    font-size: 2.5rem;
+    color: var(--vermelho);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* História */
+.texto-historia p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Hino */
+.caixa-hino {
+    background: var(--preto);
+    color: var(--branco);
+    padding: 30px;
+    border-left: 5px solid var(--vermelho);
+    border-radius: 5px;
+}
+
+.letra-hino {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.botao-hino {
+    background: var(--vermelho);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Ídolos */
+.galeria-idolos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-idolo {
+    text-align: center;
+    width: 150px;
+}
+
+.circulo-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    border: 3px solid var(--vermelho);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.circulo-foto .inicial {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Placeholders coloridos para os idolos - removidos para permitir imagens de fundo */
+
+.card-idolo h3 {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.card-idolo .funcao {
+    font-weight: bold;
+    color: var(--vermelho);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.card-idolo .historico {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    text-align: justify;
+    color: var(--preto);
+}
+
+/* Títulos */
+
+.lista-titulos ul {
+    list-style: none;
+}
+
+.lista-titulos li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+}
+
+.qtd {
+    color: var(--vermelho);
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.box-mundial {
+    margin-top: 30px;
+    background: linear-gradient(135deg, #d11212 0%, #8a0000 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.box-mundial h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.box-mundial p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.box-mundial h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.box-mundial p {
+    font-size: 0.95rem;
+}
+
+.mundos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.copa-mundo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    background: var(--preto);
+    color: var(--branco);
+}

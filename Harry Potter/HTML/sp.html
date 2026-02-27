@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>São Paulo FC - Orgulho Tricolor</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- TELA 1: ABERTURA (Animação) -->
+    <div id="tela-inicio" class="tela tela-ativa">
+        <div class="fundo-chute">
+            <!-- Imagem de fundo de um jogador haciendo un chute (Placeholder) -->
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2098&auto=format&fit=crop" alt="Jogador SPFC" class="img-fundo">
+            <div class="overlay-preto"></div>
+        </div>
+        
+        <div class="conteudo-inicio">
+            <div style="margin-bottom: 20px;">
+                <img src="https://images.unsplash.com/photo-1552108471-ee7495230189?w=150&h=150&fit=crop" alt="Logo São Paulo FC" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 4px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+            </div>
+            <div class="bola-magica">
+                <i class="fas fa-futbol"></i>
+            </div>
+            
+            <h1 class="titulo-animado" id="titulo-principal">SÃO PAULO FC</h1>
+            <p class="subtitulo-animado" id="subtitulo">Bem-vindo, Tricolores!</p>
+            
+            <button class="botao-entrar" onclick="irParaHistoria()">Entrar no Morumbi</button>
+        </div>
+    </div>
+
+    <!-- TELA 2: HISTÓRIA, HINO, ÍDOLOS E TÍTULOS -->
+    <div id="tela-historia" class="tela">
+        <div class="fundo-historia">
+            
+            <!-- Menu Fixo -->
+            <nav class="menu-navegacao">
+                <button onclick="voltarInicio()"><i class="fas fa-arrow-left"></i> Sair</button>
+                <span>São Paulo Futebol Clube</span>
+            </nav>
+
+            <!-- Seção 1: História -->
+            <section class="secao">
+                <h2 class="titulo-secao"><i class="fas fa-book-open"></i> Nossa História</h2>
+                <div class="texto-historia">
+                    <p>A mais jovem agremiação dentre os grandes do futebol brasileiro, o São Paulo Futebol Clube é o clube mais vencedor do Brasil! Fundado em 25 de janeiro de 1930 e marcado por histórias de superação, como a refundação do clube em 1935 ou os tempos difíceis da construção do Morumbis, o Tricolor Mais Querido do planeta é o único clube brasileiro a ter conquistado a América e o Mundo por três vezes.</p>
+                    <p>É o único Tricampeão consecutivo do Campeonato Brasileiro e o primeiro a conquistá-lo por seis vezes - Tri-Hexacampeão Brasileiro. Dentro das quatro linhas, foi vestindo o manto tricolor que grandes ídolos deixaram seu legado: o goleiro Caxambu que inventou a ponte, Raí e Telê que comemoraram a vitória sobre o Barcelona, Müller que marcou o gol histórico em Milão, e Rogério Ceni que se tornou o Maior Goleiro Artilheiro do Mundo.</p>
+                    <p>Fora de campo, o Tricolor desafiou os críticos e construiu o maior estádio particular do Brasil, o Morumbis. Pioneiro em sua aposta pela infraestrutura como pilar da excelência no esporte, o clube ergueu seu Centro de Treinamento e Centro de Formação de Atletas. Dono de um patrimônio invejável e detentor de títulos inalcançáveis para muitos, o Tricolor Paulista faz jus a seu hino: dentre os grandes, és o primeiro!</p>
+                </div>
+            </section>
+
+            <!-- Seção 2: O Hino -->
+            <section class="secao secao-azul">
+                <h2 class="titulo-secao"><i class="fas fa-music"></i> O Hino Tricolor</h2>
+                <div class="caixa-hino">
+                    <h3 style="margin-bottom: 15px; color: var(--vermelho);">A História do Hino</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem; line-height: 1.6;">O Hino do São Paulo FC foi oficializado em 1930, criado para exaltar os valores e a tradição do clube recém-formado. A letra foi composta como uma manifestação de orgulho das cores tricolores e da predestinação de ser campeão. O hino toca entoado por torcedores em todos os estádios, ecoando a paixão que une os corações tricolores.</p>
+                    <p class="letra-hino" style="font-size: 1.1rem;">"São Paulo, São Paulo, São Paulo!<br>
+                    Salve o Tricolor Paulista!<br>
+                    Glória e louvor eternamente,<br>
+                    Ao clube que nos representa,<br>
+                    Que sempre há de ser vencedor!<br>
+                    São Paulo, uma vez, pra sempre!"</p>
+                </div>
+            </section>
+
+            <!-- Seção 3: Ídolos Eternos -->
+            <section class="secao">
+                <h2 class="titulo-secao"><i class="fas fa-star"></i> Ídolos Eternos</h2>
+                <div class="galeria-idolos">
+                    <div class="card-idolo">
+                        <div class="circulo-foto c1"><span class="inicial">RC</span></div>
+                        <h3>Rogério Ceni</h3>
+                        <p class="funcao">Goleiro Lendário</p>
+                        <p class="historico">O maior goleiro da história do São Paulo FC, com 1183 jogos. Conquistou diversos títulos e marcou 131 gols, sendo o goleiro que mais marcou na história do futebol.</p>
+                    </div>
+                    <div class="card-idolo">
+                        <div class="circulo-foto c2"><span class="inicial">RI</span></div>
+                        <h3>Raí</h3>
+                        <p class="funcao">Capitão Tetra</p>
+                        <p class="historico">Ícone absoluto do São Paulo, conquistou 4 títulos estaduais, 1 Libertadores e 1 Intercontinental. Sua liderança dentro de campo foi fundamental para as grandes campanhas tricolores nos anos 90.</p>
+                    </div>
+                    <div class="card-idolo">
+                        <div class="circulo-foto c3"><span class="inicial">TS</span></div>
+                        <h3>Telê Santana</h3>
+                        <p class="funcao">Treinador Maior</p>
+                        <p class="historico">Revolucionou o futebol tricolor como treinador nos anos 80. Levou o São Paulo a títulos memoráveis e implantou um futebol ofensivo que deixou seu legado. Também treinou a Seleção Brasileira.</p>
+                    </div>
+                    <div class="card-idolo">
+                        <div class="circulo-foto c4"><span class="inicial">CA</span></div>
+                        <h3>Careca</h3>
+                        <p class="funcao">Artilheiro Clássico</p>
+                        <p class="historico">Um dos maiores artilheiros do São Paulo, foi campeão paulista e brasileiro. Sua agilidade e velocidade fizeram dele um terror para as defesas adversárias nos anos 80.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 4: Títulos -->
+            <section class="secao secao-trofeus">
+                <h2 class="titulo-secao"><i class="fas fa-trophy"></i> Glória Tricolor</h2>
+
+                <h3 style="color: var(--vermelho); margin: 20px 0 15px 0; font-size: 1.3rem;">🌍 Títulos Internacionais</h3>
+                <div class="lista-titulos">
+                    <ul>
+                        <li><span class="qtd">3x</span> Campeonato Mundial de Clubes (1992, 1993, 2005)</li>
+                        <li><span class="qtd">3x</span> Copa Libertadores da América (1992, 1993, 2005)</li>
+                        <li><span class="qtd">1x</span> Copa Sul-Americana (2012)</li>
+                        <li><span class="qtd">2x</span> Recopa Sul-Americana (1993, 1994)</li>
+                        <li><span class="qtd">1x</span> Supercopa Libertadores (1993)</li>
+                        <li><span class="qtd">1x</span> Copa Conmebol (1994)</li>
+                        <li><span class="qtd">1x</span> Copa Master da Conmebol (1996)</li>
+                    </ul>
+                </div>
+
+                <h3 style="color: var(--vermelho); margin: 20px 0 15px 0; font-size: 1.3rem;">🏆 Títulos Nacionais</h3>
+                <div class="lista-titulos">
+                    <ul>
+                        <li><span class="qtd">6x</span> Campeonato Brasileiro (1977, 1986, 1991, 2006, 2007, 2008)</li>
+                        <li><span class="qtd">1x</span> Copa do Brasil (2023)</li>
+                        <li><span class="qtd">2x</span> Copa dos Campeões Mundiais (1995, 1996)</li>
+                        <li><span class="qtd">1x</span> Torneio Rio-São Paulo (2001)</li>
+                        <li><span class="qtd">11x</span> Copa dos Campeões Estaduais Rio-São Paulo (1931, 1943, 1946, 1948, 1953, 1956, 1957, 1975, 1980, 1985, 1987)</li>
+                        <li><span class="qtd">1x</span> Supercampeonato Paulista (2002)</li>
+                        <li><span class="qtd">1x</span> Campeonato Paulista Extra (1934)</li>
+                    </ul>
+                </div>
+
+                <h3 style="color: var(--vermelho); margin: 20px 0 15px 0; font-size: 1.3rem;">🎖️ Campeonatos Paulistas</h3>
+                <div class="lista-titulos">
+                    <ul>
+                        <li><span class="qtd">21x</span> Campeonato Paulista (1931, 1943, 1946, 1948, 1949, 1953, 1957, 1970, 1971, 1975, 1980, 1981, 1985, 1987, 1989, 1991, 1992, 1998, 2000, 2005, 2021)</li>
+                        <li><span class="qtd">3x</span> Torneio Início do Campeonato Paulista (1932, 1940, 1945)</li>
+                        <li><span class="qtd">3x</span> Campeonato Paulista de Segundos Quadros (1933, 1938, 1940)</li>
+                        <li><span class="qtd">13x</span> Campeonato Paulista de Aspirantes (1943, 1944, 1945, 1946, 1947, 1953, 1954, 1955, 1960, 1962, 1976, 1989, 1995)</li>
+                        <li><span class="qtd">1x</span> Troféu Festival da APEA (1931)</li>
+                        <li><span class="qtd">1x</span> Taça Competência (1931)</li>
+                        <li><span class="qtd">1x</span> Taça Cidade de São Paulo (1944)</li>
+                        <li><span class="qtd">3x</span> Taça Governador do Estado de São Paulo (1980, 2006, 2007)</li>
+                    </ul>
+                </div>
+
+                <div class="box-mundial">
+                    <h3>👑 TRI-HEXACAMPEÃO BRASILEIRO</h3>
+                    <p style="margin-bottom: 15px;">O São Paulo FC é o único clube brasileiro a conquistar o Campeonato Brasileiro por seis vezes e o único tricampeão consecutivo. Único clube brasileiro a conquistar a América e o Mundo por três vezes, consolidando-se como o maior vencedor do futebol brasileiro!</p>
+                </div>
+
+            </section>
+
+            <footer>
+                <p>Uma vez São Paulo, Sempre São Paulo!</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="../JS/spfc.js"></script>
+</body>
+</html>
