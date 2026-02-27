@@ -32,3 +32,4 @@ function voltarInicio() {
 window.onload = function() {
     console.log("Bem-vindo ao Morumbi!");
 };
+
